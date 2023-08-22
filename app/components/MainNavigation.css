@@ -1,0 +1,16 @@
+#main-navigation {
+  @apply flex justify-center py-8 px-[15%];
+}
+
+#main-navigation ul {
+  @apply list-none m-0 p-0 flex gap-6 justify-center;
+}
+
+.nav-item a {
+  @apply no-underline text-primary-color-10;
+}
+
+.nav-item a:hover,
+.nav-item a.active {
+  @apply text-secondary-color-200;
+}

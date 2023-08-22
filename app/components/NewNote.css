@@ -1,0 +1,34 @@
+#note-form {
+  @apply max-w-lg my-12 mx-auto p-8 rounded-md bg-primary-color-100 shadow-sm;
+}
+
+#note-form label,
+#note-form input,
+#note-form textarea {
+  @apply block text-center;
+}
+
+#note-form label {
+  @apply mb-2 text-primary-color-500 font-bold;
+}
+
+#note-form input,
+#note-form textarea {
+  @apply w-full py-2 px-1 bg-primary-color-200 border-none rounded-sm text-primary-color-800;
+}
+
+.form-actions {
+  @apply text-center;
+}
+
+.form-actions button {
+  @apply cursor-pointer mt-2 py-3 px-8 border-none rounded-xl bg-primary-color-200 text-primary-color-700 font-bold text-base;
+}
+
+.form-actions button:hover {
+  @apply bg-primary-color-200;
+}
+
+.form-actions button:disabled {
+  @apply bg-primary-color-200 text-primary-color-300 cursor-not-allowed;
+}

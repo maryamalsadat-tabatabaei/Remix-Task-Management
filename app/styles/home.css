@@ -1,0 +1,6 @@
+.content {
+  @apply items-center text-primary-color-10;
+}
+.content a {
+  @apply hover:bg-secondary-color-200 no-underline bg-secondary-color-100 text-primary-color-500 py-2 px-8 rounded text-base;
+}
