@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./app/**/*.{js,jsx,ts,tsx}"],
+  content: ["./app/**/*.{js,jsx,ts,tsx,cjs,mjs}"],
   theme: {
     extend: {
       colors: {
@@ -35,6 +35,30 @@ export default {
           "Helvetica Neue",
           "sans-serif",
         ],
+      },
+      keyframes: {
+        "fade-blur-in": {
+          from: {
+            opacity: "0",
+            filter: "blur(1rem)",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+        "fade-slide-in": {
+          from: {
+            opacity: "0",
+            transform: "translateY(-2rem)",
+          },
+          to: {
+            opacity: "1",
+          },
+        },
+      },
+      animation: {
+        "fade-blur-in": "fade-blur-in 1s ease-out forwards",
+        "fade-slide-in": "fade-slide-in 1s ease-out forwards",
       },
     },
   },

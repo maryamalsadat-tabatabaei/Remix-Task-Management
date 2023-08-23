@@ -1,5 +1,7 @@
+@import "./components/NoteList.css";
 @import "./components/NewNote.css";
 @import "./components/MainNavigation.css";
+@import "./styles/note-details.css";
 @import "./styles/home.css";
 @tailwind base;
 @tailwind components;
@@ -29,40 +31,11 @@
   body {
     @apply bg-[radial-gradient(ellipse_at_top,_var(--color-primary-400),_var(--color-primary-100))] min-h-screen scroll-smooth;
   }
-  /* .error {
-    max-width: 25rem;
-    margin: 3rem auto;
-    padding: 2rem;
-    text-align: center;
-    background-color: var(--color-secondary-100);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-  } */
-
-  /* .info-message {
-    margin: 2rem;
-    text-align: center;
-    color: var(--color-primary-50);
-    font-size: 1.5rem;
+  .error {
+    @apply max-w-sm my-16 mx-auto p-8 text-center bg-secondary-color-100 shadow-md rounded-lg;
   }
 
-  @keyframes fade-blur-in {
-    from {
-      opacity: 0;
-      filter: blur(1rem);
-    }
-    to {
-      opacity: 1;
-    }
+  .info-message {
+    @apply m-8 text-center text-primary-color-50 text-2xl;
   }
-
-  @keyframes fade-slide-in {
-    from {
-      opacity: 0;
-      transform: translateY(-2rem);
-    }
-    to {
-      opacity: 1;
-    }
-  } */
 }

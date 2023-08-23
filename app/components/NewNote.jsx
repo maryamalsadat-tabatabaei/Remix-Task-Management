@@ -1,8 +1,13 @@
+import { Form, useActionData, useNavigation } from "@remix-run/react";
 import NewNoteStyles from "./NewNote.css";
 
 function NewNote() {
+  const data = useActionData();
+  const naviagation = useNavigation();
+  const isSubmitting = naviagation.state === "submitting";
   return (
-    <form method="post" id="note-form">
+    <Form method="post" id="note-form">
+      {data?.message && <p>{data.message}</p>}
       <p>
         <label htmlFor="title">Title</label>
         <input type="text" id="title" name="title" required />
@@ -12,13 +17,16 @@ function NewNote() {
         <textarea id="content" name="content" rows="5" required />
       </p>
       <div className="form-actions">
-        <button>Add Note</button>
+        <button disabled={isSubmitting}>
+          {isSubmitting ? "Adding..." : "Add Note"}
+        </button>
       </div>
-    </form>
+    </Form>
   );
 }
 
 export default NewNote;
+
 export function links() {
   return [{ rel: "stylesheet", href: NewNoteStyles }];
 }

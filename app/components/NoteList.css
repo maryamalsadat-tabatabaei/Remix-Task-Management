@@ -1,0 +1,26 @@
+#note-list {
+  @apply max-w-5xl flex flex-wrap justify-center gap-4 list-none my-8 mx-auto;
+}
+
+#note-list a {
+  @apply no-underline;
+}
+
+.note {
+  @apply w-4/12 bg-primary-color-700 shadow-md p-6 rounded transition-all duration-300 ease-out animate-fade-blur-in;
+}
+.note:hover {
+  @apply bg-primary-color-600 -translate-y-1;
+}
+
+.note-meta {
+  @apply no-underline m-0 p-0 flex justify-between items-center text-primary-color-300 font-bold pb-2 mb-2 border-primary-color-300 border-b-2 border-solid;
+}
+
+.note h2 {
+  @apply text-primary-color-200 mt-0 mx-0 mb-2;
+}
+
+.note p {
+  @apply m-0 text-primary-color-100 whitespace-nowrap overflow-hidden text-ellipsis w-full;
+}
