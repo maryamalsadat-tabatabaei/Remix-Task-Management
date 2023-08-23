@@ -1,7 +1,7 @@
 import { json, redirect } from "@remix-run/node";
-import NewNote, { links as NewNoteLinks } from "./../components/NewNote";
-import NoteList, { links as NoteListLinks } from "./../components/NoteList";
-import { getStoredNotes, storeNotes } from "./../data/notes";
+import NewNote, { links as NewNoteLinks } from "../components/NewNote";
+import NoteList, { links as NoteListLinks } from "../components/NoteList";
+import { getStoredNotes, storeNotes } from "../data/notes";
 import {
   useLoaderData,
   Link,
@@ -10,6 +10,7 @@ import {
 } from "@remix-run/react";
 export default function NotesPage() {
   const notes = useLoaderData();
+
   return (
     <main>
       <NewNote />
@@ -19,6 +20,16 @@ export default function NotesPage() {
 }
 export async function loader() {
   const notes = await getStoredNotes();
+  if (!notes || notes.length === 0) {
+    throw json(
+      { message: "Could not find any notes." },
+      {
+        status: 404,
+        statusText: "Not Found",
+      }
+    );
+  }
+
   return notes;
   // return new Response(JSON.stringify(notes), {
   //   headers: { "Content-Type": "application/json" },
@@ -77,4 +88,11 @@ export function ErrorBoundary() {
       </p>
     </div>
   );
+}
+
+export function meta() {
+  return [
+    { title: "All Notes" },
+    { description: "Manage your notes with ease." },
+  ];
 }

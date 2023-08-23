@@ -1,5 +1,5 @@
 #note-details {
-  @apply max-w-2xl my-12 mx-auto text-center text-primary-color-50 bg-primary-color-800 rounded-3xl animate-fade-slide-in;
+  @apply max-w-xl my-12 mx-auto text-center text-primary-color-50 bg-primary-color-800 rounded-3xl animate-fade-slide-in;
 }
 
 #note-details nav {
